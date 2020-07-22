@@ -1,0 +1,37 @@
+{
+  "name": "sistema-metalmecanico",
+  "version": "1.0.0",
+  "description": "Sistema de informacion para administrar la facturacion de procesos metalmecanicos",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "Hayder Garcia Jimenez",
+  "license": "ISC",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "currency-formatter": "^1.5.5",
+    "dotenv": "^8.2.0",
+    "email-templates": "^7.0.5",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-validator": "^6.5.0",
+    "html-pdf": "^2.2.0",
+    "html-to-pdfmake": "^2.0.8",
+    "js-file-download": "^0.4.12",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.8",
+    "nodemailer-handlebars": "^1.0.1",
+    "pdfkit": "^0.11.0",
+    "pug": "^3.0.0",
+    "react-dev-utils": "^10.0.0"
+  }
+}
