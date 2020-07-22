@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json({extended: true})); 
 
 //Puerto de la app
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 //Importamos rutas
 app.use('/api/tipo-identificacion', require('./routes/tipoIdentificacion'));
@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 //Arrancar la app
-app.listen(PORT, () => {    
+app.listen(port, '0.0.0.0', () => {    
     console.log(`El servidor esta funcionando en el puerto ${PORT}`);
 });
 
