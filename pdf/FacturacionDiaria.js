@@ -153,7 +153,7 @@ exports.reporteVenta = function (respuesta) {
                                 </td>
                                 <td>
                                 <div align='center'>
-                                    <font size=2>
+                                    <font size=1>
                                         <b>Reporte de Ventas</b><br/>
                                         <span>De: ${respuesta.fechaInicial} al ${respuesta.fechaFinal}</span><br/>
                                     </font>
