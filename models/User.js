@@ -10,15 +10,13 @@ const UserSchema = mongoose.Schema({
     identificacion: {
         type: String,
         required: true,
-        trim: true,
-        unique: true
+        trim: true
     },
 
     email: {
         type: String,
         required: true,
-        trim: true,
-        unique: true
+        trim: true
     },
 
     numero: {
@@ -60,6 +58,11 @@ const UserSchema = mongoose.Schema({
         ref: 'Perfil'
     },
 
+    idUser: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    
     fecha: {
         type: Date,
         default: Date.now()

@@ -45,14 +45,14 @@ exports.add = async (req, res) => {
     }
     
     //Estraemos los datos
-    const {valor} = req.body;
+    const {nombre, idUser} = req.body;
 
     try {
         //Validamos si existe un usuario en BD
-        let object = await Parametros.findOne({valor});
+        let object = await Parametros.findOne({nombre, idUser});
 
         if(object){
-            return res.status(400).json({msg: 'El tipo de identificación ya existe'});
+            return res.status(400).json({msg: 'Este Parametro ya esta creado'});
         }
 
         //Creamos usiario con la estructura del json recibido

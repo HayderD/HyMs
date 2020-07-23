@@ -14,11 +14,12 @@ exports.list = async (req, res) => {
         let object = await Producto.aggregate(
             [
                 // //Primero se filtra la llave de busqueda
-                // {
-                //     $match: {
-                //         _id: ObjectID(req._id)
-                //     }
-                // },
+                {
+                    $match: {
+                        idUser: ObjectID(req.params.id),
+                        estado: 'activo'
+                    }
+                }, 
                 //Luego se cruza con la coleccion pertinenete con el metodo $lookup
                 {
                     $lookup: {
@@ -61,7 +62,14 @@ exports.list = async (req, res) => {
 exports.getId = async (req, res) => {
     try {
         let object = await Producto.aggregate(
-            [               
+            [  
+                // First Stage 2020-07-19T00:00:00.000Z al '2020-07-20T23:00:00.000Z'
+               // //Primero se filtra la llave de busqueda
+                {
+                    $match: {
+                        _id: ObjectID(req.params.id),
+                    }
+                },            
                 //Luego se cruza con la coleccion pertinenete con el metodo $lookup
                 {
                     $lookup: {
@@ -81,13 +89,7 @@ exports.getId = async (req, res) => {
                         _idPrecioProducto: '$precioProducto._id', fecha: '$precioProducto.fecha', idUser: '$idUser', 
                         estado: '$estado',
                     }                   
-                },
-                 // //Primero se filtra la llave de busqueda
-                 {
-                    $match: {
-                        _idPrecioProducto: ObjectID(req.params.id)
-                    }
-                }
+                }                 
             ],
             function(error, data){
                 if(error){
@@ -121,7 +123,7 @@ exports.add = async  (req, res, next) => {
    
     try {
         //Validamos si existe un usuario en BD
-        let object = await Producto.findOne({nombre});
+        let object = await Producto.findOne({nombre, idUser});
 
         if(object){
             return res.status(400).json({msg: 'El nombre de producto ya existe'});

@@ -5,8 +5,7 @@ const ParametroSchema = mongoose.Schema({
     nombre: {
         type: String,
         required: true,
-        trim: true,
-        unique: true
+        trim: true
     },
 
     valor: {

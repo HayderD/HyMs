@@ -26,14 +26,14 @@ router.post('/:id',
 
 //Listar
 // api/producto
-router.get('/',
+router.get('/:id',
     seguridadToken,
     controller.list
 );
 
 //Listar
 // api/producto/id
-router.get('/:id',
+router.get('/:id/:idUser',
     seguridadToken,
     controller.getId
 );

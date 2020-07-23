@@ -25,14 +25,14 @@ router.post('/',
 
 //Listar
 // api/users
-router.get('/',
+router.get('/:idUser',
     seguridadToken,
     controller.listUser
 );
 
 //Listar
 // api/users
-router.get('/:id',
+router.get('/:id/:idUser',
     seguridadToken,
     controller.getId
 );

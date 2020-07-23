@@ -16,11 +16,11 @@ exports.addUser = async (req, res) => {
     }
     
     //Estraemos los datos
-    const {email, password, identificacion} = req.body;
+    const {email, password, identificacion, idUser} = req.body;
 
     try {
         //Validamos si existe un usuario en BD
-        let user = await User.findOne({email});
+        let user = await User.findOne({email, idUser});
 
         if(user){
             return res.status(400).json({msg: 'El usuario ya existe'});
@@ -81,7 +81,13 @@ exports.listUser = async (req, res) => {
     try {
         const users = await User.aggregate(
             [
-                 //Primero se filtra la llave de busqueda                 
+                 //Primero se filtra la llave de busqueda   
+                 //Primero se filtra la llave de busqueda
+                {
+                    $match: {
+                        idUser:  ObjectID(req.params.idUser)
+                    }
+                },              
                 {
                     $lookup: {
                         from: 'tipo_identificacions',
@@ -107,8 +113,8 @@ exports.listUser = async (req, res) => {
                 {
                     $project: {
                         _id: '$_id', nombre: '$nombre', identificacion: '$identificacion', email : '$email', numero: '$numero',
-                        direccion: '$direccion', ciudad: '$ciudad', barrio: '$barrio', tipoIdentificacion: '$tipoIdentificacion.descripcion', perfil: '$perfil.descripcion', 
-                        estado: '$estado'                        
+                        direccion: '$direccion', ciudad: '$ciudad', barrio: '$barrio', tipoIdentificacion: '$tipoIdentificacion.descripcion', 
+                        idUser: '$idUser', perfil: '$perfil.descripcion', estado: '$estado'                        
                     }
                 }
             ],
@@ -193,10 +199,10 @@ exports.editUser = async (req, res) => {
      }
      try {
      //Estraemos los datos
-     const {nombre, email, identificacion, numero, direccion, idTipoIdentificacion, estado} = req.body;
+     const {nombre, email, identificacion, numero, direccion, ciudad, barrio, idTipoIdentificacion, estado, idUser} = req.body;
 
     //Validamos si existe un usuario en BD
-    let user = await User.findOne({email});
+    let user = await User.findOne({email, idUser});
 
   if(user) { 
       if(user._id != req.params.id){
@@ -219,6 +225,8 @@ exports.editUser = async (req, res) => {
             identificacion,
             numero,
             direccion,
+            ciudad,
+            barrio,
             estado
         };
    
