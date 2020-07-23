@@ -141,7 +141,8 @@ exports.reporteVenta = function (respuesta) {
 
                     table{
                         width:100%;
-                    }
+                        size: 5px;
+                    }                    
                     </style>
                 </head>
                 <body>
@@ -153,10 +154,10 @@ exports.reporteVenta = function (respuesta) {
                                 </td>
                                 <td>
                                 <div align='center'>
-                                    <font size=1>
+                                    
                                         <b>Reporte de Ventas</b><br/>
                                         <span>De: ${respuesta.fechaInicial} al ${respuesta.fechaFinal}</span><br/>
-                                    </font>
+                                  
                                 </div>
                                 </td>
                             </tr>
