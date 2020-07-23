@@ -18,6 +18,7 @@ exports.facturacionDiario = function (factura) {
 
                     table{
                         width:100%;
+                        size: 5px;
                     }
                     </style>
                 </head>
@@ -141,7 +142,7 @@ exports.reporteVenta = function (respuesta) {
 
                     table{
                         width:100%;
-                        size: 5px;
+                        size: 1px;
                     }                    
                     </style>
                 </head>
@@ -150,14 +151,12 @@ exports.reporteVenta = function (respuesta) {
                         <table>
                             <tr>
                                 <td>
-                                    <font size=4><b>H</b><span class="text-color">y</span><b>M</b><span class="text-color">s</span></font><span><font size=1> Facturación SAS</span></font><br/>                                    
+                                    <b>H</b><span class="text-color">y</span><b>M</b><span class="text-color">s</span></font><span><font size=1> Facturación SAS</span><br/>                                    
                                 </td>
                                 <td>
-                                <div align='center'>
-                                    
+                                <div align='center'>                                    
                                         <b>Reporte de Ventas</b><br/>
-                                        <span>De: ${respuesta.fechaInicial} al ${respuesta.fechaFinal}</span><br/>
-                                  
+                                        <span>De: ${respuesta.fechaInicial} al ${respuesta.fechaFinal}</span><br/>                                  
                                 </div>
                                 </td>
                             </tr>
