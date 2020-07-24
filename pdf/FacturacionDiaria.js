@@ -27,15 +27,13 @@ exports.facturacionDiario = function (factura) {
                         <table>
                             <tr>
                                 <td>
-                                    <font size=4><b>H</b><span class="text-color">y</span><b>M</b><span class="text-color">s</span></font><span><font size=1> Facturación SAS</span></font><br/>
-                                    <font size=2>
-                                        Datos del vendedor<br/>
-                                        <b>${factura.usuario.nombre}</b><br/>
-                                        <span>NIT/IDENT: ${factura.usuario.identificacion}</span><br/>
-                                        <span>Dir: ${factura.usuario.direccion}</span><br/>
-                                        <span>Ciudad: ${factura.usuario.ciudad} Barrio: ${factura.usuario.barrio}</span><br/>
-                                        <span>Tel/Cel: ${factura.usuario.numero}</span>
-                                    </font>
+                                    <font size=4><b>H</b><span class="text-color">y</span><b>M</b><span class="text-color">s</span></font><span><font size=1> Facturación SAS</span></font><br/>                                    
+                                    Datos del vendedor<br/>
+                                    <b>${factura.usuario.nombre}</b><br/>
+                                    <span>NIT/IDENT: ${factura.usuario.identificacion}</span><br/>
+                                    <span>Dir: ${factura.usuario.direccion}</span><br/>
+                                    <span>Ciudad: ${factura.usuario.ciudad} Barrio: ${factura.usuario.barrio}</span><br/>
+                                    <span>Tel/Cel: ${factura.usuario.numero}</span>                                    
                                 </td>
                                 <td>
                                 <div align='center'>
