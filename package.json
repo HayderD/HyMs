@@ -22,7 +22,7 @@
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-validator": "^6.5.0",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "html-to-pdfmake": "^2.0.8",
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^8.5.1",
